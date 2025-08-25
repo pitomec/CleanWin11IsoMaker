@@ -1,0 +1,5 @@
+*.iso
+logs.txt
+tmp/
+Install/*
+!Install/.gitkeep

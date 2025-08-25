@@ -1,0 +1,12 @@
+DirectX
+Language
+Wallpapers
+Ethernet
+Notepad
+PowerShell
+Wifi
+OpenSSH
+Kernel
+Print
+VBSCRIPT
+WMIC

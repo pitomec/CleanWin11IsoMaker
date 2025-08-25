@@ -1,0 +1,15 @@
+ApplicationCompatibilityEnhancements
+AV1VideoExtension
+AVCEncoderVideoExtension
+DesktopAppInstaller
+HEIFImageExtension
+HEVCVideoExtension
+MPEG2VideoExtension
+RawImageExtension
+VP9VideoExtensions
+WebMediaExtensions
+WebpImageExtension
+WindowsCalculator
+WindowsNotepad
+WindowsTerminal
+SecHealthUI
