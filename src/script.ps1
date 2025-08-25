@@ -12,11 +12,6 @@
 # - Disable Defender?
 
 function Main {
-	$startTime = Get-Date
-	$proc = Get-Process -Id $PID
-	$cpuStart = $proc.TotalProcessorTime
-	$before = [System.GC]::GetTotalMemory($false)
-	
 	$tempDir = "$PSSCRIPTROOT\tmp"
 	$isoDir = "$tempDir\ISO"
 	$imagesDir = "$tempDir\images"
@@ -158,26 +153,6 @@ function Main {
 	}
 	$ConfirmPreference = $cP
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers" -Name "DisableAutoplay" -Value $autoplay
-	
-	$endTime = Get-Date
-	$duration = $endTime - $startTime
-	$hours = [math]::Floor($duration.TotalHours)
-	$minutes = $duration.Minutes
-	$seconds = $duration.Seconds
-	$proc.Refresh()
-	$cpuEnd = $proc.TotalProcessorTime
-	$cpuUsed = ($cpuEnd - $cpuStart).TotalSeconds
-	$cores = (Get-CimInstance Win32_ComputerSystem).NumberOfLogicalProcessors
-	$cpuUsagePercent = [math]::Round(($cpuUsed / ( $duration * $cores)) * 100, 2)
-	
-	$after = [System.GC]::GetTotalMemory($false)
-	# Calculate memory used in MB
-    $usedBytes = $after - $before
-    $usedMB = [math]::Round($usedBytes / 1MB, 4)
-
-	Write-Host "Script took $hours hour(s), $minutes minute(s), and $seconds second(s)."
-	Write-Host "Average CPU usage: $cpuUsagePercent %"
-	Write-Output "Estimated Memory Used: $usedMB MB"
 	AwaitKeyToExit
 }
 
