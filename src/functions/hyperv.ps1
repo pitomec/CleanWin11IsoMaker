@@ -66,7 +66,7 @@ function CreateUSBVHD {
 	)
 	$rootFolder = Split-Path (Split-Path $PSSCRIPTROOT -Parent) -Parent
 	$userInstalls = "$rootFolder\Install\"
-	New-VHD -Path "$VMFolderPath\USB.vhdx" -SizeBytes 17179869184 -Fixed | Mount-VHD -Passthru |Initialize-Disk -Passthru |New-Partition -AssignDriveLetter -UseMaximumSize |Format-Volume -FileSystem NTFS -NewFileSystemLabel "USB-B" -Confirm:$false -Force | Out-Null
+	New-VHD -Path "$VMFolderPath\USB.vhdx" -SizeBytes 34359738368 -Fixed | Mount-VHD -Passthru |Initialize-Disk -Passthru |New-Partition -AssignDriveLetter -UseMaximumSize |Format-Volume -FileSystem NTFS -NewFileSystemLabel "USB-B" -Confirm:$false -Force | Out-Null
 	$usbLtr = (Get-Volume | Where-Object { $_.FileSystemLabel -eq 'USB-B' }).DriveLetter
 	New-Item -Path "${usbLtr}:\Images" -ItemType "Directory" -ErrorAction SilentlyContinue | Out-Null
 	Copy-Item -Path $ImagePath -Destination "${usbLtr}:\Images\install.wim" -Force
