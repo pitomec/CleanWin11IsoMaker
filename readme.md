@@ -100,6 +100,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
     - Microsoft.Windows.Photos
     - Microsoft.WindowsAlarms
     - Microsoft.WindowsCamera
+    - Microsoft.WindowsCalculator
     - Microsoft.WindowsFeedbackHub
     - Microsoft.WindowsNotepad
     - Microsoft.WindowsSoundRecorder
@@ -141,6 +142,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable automatic windows updates(only notifies)
 - Disable Windows Defender Notifications
 - Disable Xbox game/screen recording, this also stops gaming overlay popups
+- Disable network connectivity during Modern Standby to reduce battery drain.
 
 #### Telemetry
 - Disable telemetry, diagnostic data, activity history, app-launch tracking & targeted ads
@@ -153,6 +155,8 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable Windows Recall snapshots
 - Disable AI Features in Paint
 - Disable AI Features in Notepad
+- Disable AI Features in Edge
+- Disable Click To Do, AI image & text analysis tool
 
 #### File Explorer
 - Change the default location that File Explorer opens to "This PC"
