@@ -9,7 +9,5 @@ RawImageExtension
 VP9VideoExtensions
 WebMediaExtensions
 WebpImageExtension
-WindowsCalculator
-WindowsNotepad
 WindowsTerminal
 SecHealthUI
