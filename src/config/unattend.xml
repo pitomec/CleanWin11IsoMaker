@@ -719,20 +719,20 @@
 			<!-- Disable website access to language list -->
                 <RunSynchronousCommand wcm:action="add">
                     <Order>159</Order>
-                    <Path>reg.exe unload "HKU\DefaultUser\Control Panel\International\User Profile" /v HttpAcceptLanguageOptOut /t REG_DWORD /d 0 /f</Path>
+                    <Path>reg.exe add "HKU\DefaultUser\Control Panel\International\User Profile" /v HttpAcceptLanguageOptOut /t REG_DWORD /d 0 /f</Path>
                 </RunSynchronousCommand>
 			<!-- Disable Search history and cloud search -->
                 <RunSynchronousCommand wcm:action="add">
                     <Order>160</Order>
-                    <Path>reg.exe unload "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsDeviceSearchHistoryEnabled /t REG_DWORD /d 0 /f</Path>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsDeviceSearchHistoryEnabled /t REG_DWORD /d 0 /f</Path>
                 </RunSynchronousCommand>
                 <RunSynchronousCommand wcm:action="add">
                     <Order>161</Order>
-                    <Path>reg.exe unload "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsMSACloudSearchEnabled /t REG_DWORD /d 0 /f</Path>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsMSACloudSearchEnabled /t REG_DWORD /d 0 /f</Path>
                 </RunSynchronousCommand>
                 <RunSynchronousCommand wcm:action="add">
                     <Order>162</Order>
-                    <Path>reg.exe unload "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsAADCloudSearchEnabled /t REG_DWORD /d 0 /f</Path>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsAADCloudSearchEnabled /t REG_DWORD /d 0 /f</Path>
                 </RunSynchronousCommand>
                 <RunSynchronousCommand wcm:action="add">
                     <Order>163</Order>
@@ -742,6 +742,93 @@
                 <RunSynchronousCommand wcm:action="add">
                     <Order>164</Order>
                     <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" /v DisableNotifications /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Modern Standby networking -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>165</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9" /v ACSettingIndex /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>166</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Power\PowerSettings\f15576e8-98b7-4186-b944-eafa664402d9" /v DCSettingIndex /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+		<!-- MS Edge -->
+			<!-- Disable send diagnostic data -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>167</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v DiagnosticData /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Microsoft Edge MSN news feed, sponsored links, shopping assistant and more. -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>168</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v NewTabPageContentEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>169</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v NewTabPageHideDefaultTopSites /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>170</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v EdgeShoppingAssistantEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>171</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v TabServicesEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>172</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v AlternateErrorPagesEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Edge AI features -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>173</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v CopilotCDPPageContext /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>174</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v CopilotPageContext /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>175</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HubsSidebarEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>176</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v EdgeEntraCopilotPageContext /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>177</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v EdgeHistoryAISearchEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>178</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v ComposeInlineEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>179</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v GenAILocalFoundationalModelSettings /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>180</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v NewTabPageBingChatEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+		<!-- end -->
+			<!-- Disable Click To Do (AI image/text analysis) -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>181</Order>
+                    <Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>182</Order>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Policies\Microsoft\Windows\WindowsAI" /v DisableClickToDo /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>183</Order>
+                    <Path>reg.exe unload "HKU\DefaultUser"</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>184</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v DisableClickToDo /t REG_DWORD /d 1 /f</Path>
                 </RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
