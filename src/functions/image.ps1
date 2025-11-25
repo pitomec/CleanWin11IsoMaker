@@ -40,6 +40,7 @@ function MakeImageFile {
 		[string]$Path,
 		[string]$UnattendPath,
 		$pinsBinPath = (Split-Path $PSSCRIPTROOT -Parent) + "\config\start2.bin",
+		$hostsPath = (Split-Path $PSSCRIPTROOT -Parent) + "\config\hosts",
 		[string]$Destination
 	)
 	$startMenuPath = "$Path\Users\Default\AppData\Local\Packages\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\LocalState"
@@ -49,6 +50,8 @@ function MakeImageFile {
 	Write-Host "Adding start2.bin to remove pins from start menu.."
 	New-Item $startMenuPath -ItemType Directory -Force | Out-Null
 	Copy-Item -Path $pinsBinPath -Destination $startMenuPath -Force
+	Write-Host "Adding hosts to remove telemetry endpoints.."
+	Copy-Item -Path $hostsPath -Destination "$Path\Windows\System32\drivers\etc" -Force
 	Write-Host "Cleaning up the modified image.."
 	dism /Image:"$Path" /cleanup-image /startcomponentcleanup /quiet /norestart
 	Write-Host "Unmounting modified image.."
