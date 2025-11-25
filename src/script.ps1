@@ -183,33 +183,12 @@ function IncludeActivation {
 $setupCmd = @'
 @echo off
 fltmc >nul || exit /b
-call "%~dp0Activation.cmd"
+call "%~dp0Activation.cmd" /Z-Windows /Z-KMS4k
 cd \
 (goto) 2>nul & (if /I "%~dp0"=="%SystemRoot%\Setup\Scripts\" rd /s /q "%~dp0")
 '@
 
-$activationCmd = @'
-@echo off
-:: Install generic key for your edition first:
-cscript /Nologo %windir%\system32\slmgr.vbs /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-::  Generate KMS38.xml and apply
-set "signature=C52iGEoH+1VqzI6kEAqOhUyrWuEObnivzaVjyef8WqItVYd/xGDTZZ3bkxAI9hTpobPFNJyJx6a3uriXq3HVd7mlXfSUK9ydeoUdG4eqMeLwkxeb6jQWJzLOz41rFVSMtBL0e+ycCATebTaXS4uvFYaDHDdPw2lKY8ADj3MLgsA="
-set "sessionId=TwBTAE0AYQBqAG8AcgBWAGUAcgBzAGkAbwBuAD0ANQA7AE8AUwBNAGkAbgBvAHIAVgBlAHIAcwBpAG8AbgA9ADEAOwBPAFMAUABsAGEAdABmAG8AcgBtAEkAZAA9ADIAOwBQAFAAPQAwADsARwBWAEwASwBFAHgAcAA9ADIAMAAzADgALQAwADEALQAxADkAVAAwADMAOgAxADQAOgAwADcAWgA7AEQAbwB3AG4AbABlAHYAZQBsAEcAZQBuAHUAaQBuAGUAUwB0AGEAdABlAD0AMQA7AAAA"
-<nul set /p "=<?xml version="1.0" encoding="utf-8"?><genuineAuthorization xmlns="http://www.microsoft.com/DRM/SL/GenuineAuthorization/1.0"><version>1.0</version><genuineProperties origin="sppclient"><properties>OA3xOriginalProductId=;OA3xOriginalProductKey=;SessionId=%sessionId%;TimeStampClient=2022-10-11T12:00:00Z</properties><signatures><signature name="clientLockboxKey" method="rsa-sha256">%signature%</signature></signatures></genuineProperties></genuineAuthorization>" >"%SystemDrive%\KMS38.xml"
-:: Install ticket using clipup
-clipup.exe -v -o -altto C:\
-:: Restart licensing service
-net stop sppsvc
-net start sppsvc
-<nul set /p "=<?xml version="1.0" encoding="utf-8"?><genuineAuthorization xmlns="http://www.microsoft.com/DRM/SL/GenuineAuthorization/1.0"><version>1.0</version><genuineProperties origin="sppclient"><properties>OA3xOriginalProductId=;OA3xOriginalProductKey=;SessionId=%sessionId%;TimeStampClient=2022-10-11T12:00:00Z</properties><signatures><signature name="clientLockboxKey" method="rsa-sha256">%signature%</signature></signatures></genuineProperties></genuineAuthorization>" >"%SystemDrive%\KMS38.xml"
-:: Install ticket using clipup
-clipup.exe -v -o -altto C:\
-:: Restart licensing service
-net stop sppsvc
-net start sppsvc
-if exist "%SystemDrive%\*.xml" del /f /q "%SystemDrive%\*.xml" %nul%
-exit /b
-'@
+$activationCmd = irm "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/refs/heads/master/MAS/Separate-Files-Version/Activators/TSforge_Activation.cmd"
 	Write-Host "Creating OEM directory in setup.."
 	New-Item -ItemType "Directory" -Path $fullPath -Force | Out-Null
 	Write-Host "Inserting scripts.."
