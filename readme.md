@@ -149,6 +149,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable tips, tricks, suggestions and ads in start, settings, notifications, File Explorer, and on the lockscreen
 - Disable ads and the MSN news feed in Microsoft Edge
 - Disable the 'Windows Spotlight' desktop background option
+- Disable diagnostic tracking services
 
 #### AI
 - Disable & remove Microsoft Copilot
@@ -177,7 +178,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable the Phone Link mobile devices integration in the start menu
 - Removed all pins
 
-###### Pre-activation with KMS38 Method
+###### Pre-activation with TSForge KMS4k Method
 
 ## Links
 
