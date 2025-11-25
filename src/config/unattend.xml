@@ -830,6 +830,69 @@
                     <Order>184</Order>
                     <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" /v DisableClickToDo /t REG_DWORD /d 1 /f</Path>
                 </RunSynchronousCommand>
+			<!-- Disable Windows Spotlight -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>185</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /v DisableCloudOptimizedContent /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable WNS -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>186</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v NoCloudApplicationNotification /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Connection Test -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>187</Order>
+                    <Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet" /v EnableActiveProbing /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>188</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityStatusIndicator" /v NoActiveProbe /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Prevent Edge from launch -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>189</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" /v AllowPrelaunch /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>190</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main" /v PreventLiveTileDataCollection /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>191</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\TabPreloader" /v AllowTabPreloading /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>192</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v ExperimentationAndConfigurationServiceControl /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Startup of SecurityHealthSysTray -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>193</Order>
+                    <Path>reg.exe delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v SecurityHealth /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Windows Store Updates -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>194</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\WindowsStore" /v RemoveWindowsStore /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>195</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\WindowsStore" /v DisableOSUpgrade /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>196</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\WindowsStore" /v AutoDownload /t REG_DWORD /d 2 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Diagnostic Tracking Services -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>197</Order>
+                    <Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\DiagTrack" /v Start /t REG_DWORD /d 3 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>198</Order>
+                    <Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\DSP" /v Start /t REG_DWORD /d 4 /f</Path>
+                </RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
 	</settings>
