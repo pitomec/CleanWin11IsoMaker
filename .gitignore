@@ -4,3 +4,4 @@ tmp/
 Install/*
 !Install/.gitkeep
 !Install/edge.bat
+!Install/remove-edge.ps1
