@@ -1,6 +1,8 @@
 # Clean Win 11 ISO Maker
 It's basically just a click-and-run script that customizes the Windows 11 image by removing pre-installed bloatware, making registry tweaks to disable telemetry, remove intrusive interface elementsand making your image as how you'd like it to be.
 
+> [!Important]
+> I mainly use this branch by myself. The main differences with the default branch are the uninstallation of Edge and the disabling of Windows Defender.
 <details>
     <summary>Introduction</summary><br/>
     I needed nested VM management (I was using Windows 10 as of August 2025), but when I tried to do this, I realized that Windows 10 only supports nested virtualization on Intel chips, and I use AMD. After investigating further, I learned that Windows 11 is the only version that supports it. I considered using Linux as my main operating system, but I realized that games and Nvidia drivers are not ideal for a Linux machine. I've come up with a idea to make a script that can generate the ISO file I need. Afterwards, I'll install them wherever I want.
