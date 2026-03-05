@@ -3,3 +3,4 @@ logs.txt
 tmp/
 Install/*
 !Install/.gitkeep
+!Install/edge.bat
