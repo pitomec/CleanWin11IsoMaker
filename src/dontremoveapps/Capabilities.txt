@@ -2,7 +2,6 @@ DirectX
 Language
 Wallpapers
 Ethernet
-Notepad
 PowerShell
 Wifi
 OpenSSH

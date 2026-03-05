@@ -6,7 +6,6 @@ Foundation
 Kernel
 LanguageFeatures
 Licenses
-Notepad
 Powershell
 Printing
 VBSCRIPT
