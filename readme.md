@@ -143,6 +143,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable Windows Defender Notifications
 - Disable Xbox game/screen recording, this also stops gaming overlay popups
 - Disable network connectivity during Modern Standby to reduce battery drain.
+- Disable BitLocker auto encryption
 
 #### Telemetry
 - Disable telemetry, diagnostic data, activity history, app-launch tracking & targeted ads
@@ -150,6 +151,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable ads and the MSN news feed in Microsoft Edge
 - Disable the 'Windows Spotlight' desktop background option
 - Disable diagnostic tracking services
+- Disable location services
 
 #### AI
 - Disable & remove Microsoft Copilot
