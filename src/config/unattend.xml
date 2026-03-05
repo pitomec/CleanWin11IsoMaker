@@ -917,6 +917,11 @@
                     <Order>203</Order>
                     <Path>reg.exe add "HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings" /v IsContinuousInnovationOptedIn /t REG_DWORD /d 0 /f</Path>
                 </RunSynchronousCommand>
+			<!-- Disable Auto Reboot after Update -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>204</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
 	</settings>
