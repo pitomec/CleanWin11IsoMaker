@@ -1,0 +1,1 @@
+Reset-AppxPackage -Package "NotepadPlusPlus_1.0.0.0_neutral__2247w0b46hfww"

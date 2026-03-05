@@ -5,3 +5,6 @@ Install/*
 !Install/.gitkeep
 !Install/edge.bat
 !Install/remove-edge.ps1
+!Install/notepad.txt
+!Install/install.cmd
+!Install/Restore_New_Text_Document_context_menu_item.reg
