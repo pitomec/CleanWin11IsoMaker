@@ -144,6 +144,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable Xbox game/screen recording, this also stops gaming overlay popups
 - Disable network connectivity during Modern Standby to reduce battery drain.
 - Disable BitLocker auto encryption
+- Disable Fast Start-Up
 
 #### Telemetry
 - Disable telemetry, diagnostic data, activity history, app-launch tracking & targeted ads
@@ -160,6 +161,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable AI Features in Notepad
 - Disable AI Features in Edge
 - Disable Click To Do, AI image & text analysis tool
+- Disable AI Service
 
 #### File Explorer
 - Change the default location that File Explorer opens to "This PC"
