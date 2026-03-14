@@ -922,6 +922,43 @@
                     <Order>204</Order>
                     <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoRebootWithLoggedOnUsers /t REG_DWORD /d 1 /f</Path>
                 </RunSynchronousCommand>
+			<!-- Disable voice activation -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>205</Order>
+                    <Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>206</Order>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps" /v AgentActivationEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>207</Order>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Speech_OneCore\Settings\VoiceActivation\UserPreferenceForAllApps" /v AgentActivationLastUsed /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>208</Order>
+                    <Path>reg.exe unload "HKU\DefaultUser"</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Fast Start-up -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>209</Order>
+                    <Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v HiberbootEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable AI Service Auto Start -->
+                <RunSynchronousCommand wcm:action="add">
+                    <Order>210</Order>
+                    <Path>reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\WSAIFabricSvc" /v Start /t REG_DWORD /d 3 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Windows Error Reporting -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>211</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting" /v Disabled /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Background Apps -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>212</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsRunInBackground /t REG_DWORD /d 2 /f</Path>
+                </RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
 	</settings>
