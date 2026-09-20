@@ -959,6 +959,39 @@
                     <Order>212</Order>
                     <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" /v LetAppsRunInBackground /t REG_DWORD /d 2 /f</Path>
                 </RunSynchronousCommand>
+			<!-- Disable Search Highlights -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>213</Order>
+                    <Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>214</Order>
+                    <Path>reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsDynamicSearchBoxEnabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Storage Sense -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>215</Order>
+                    <Path>reg.exe add "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v 01 /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Windows Backup reminder notifications -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>216</Order>
+                    <Path>reg.exe add "HKU\DefaultUser\SOFTWARE\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.BackupReminder" /v Enabled /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>217</Order>
+                    <Path>reg.exe unload "HKU\DefaultUser"</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Windows Backup reminder notifications -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>218</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Device Metadata" /v PreventDeviceMetadataFromNetwork /t REG_DWORD /d 1 /f</Path>
+                </RunSynchronousCommand>
+			<!-- Disable Find My Device location tracking -->
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>219</Order>
+                    <Path>reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\FindMyDevice" /v AllowFindMyDevice /t REG_DWORD /d 0 /f</Path>
+                </RunSynchronousCommand>
 			</RunSynchronous>
 		</component>
 	</settings>
