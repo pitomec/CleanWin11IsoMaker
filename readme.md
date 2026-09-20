@@ -147,6 +147,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable network connectivity during Modern Standby to reduce battery drain.
 - Disable BitLocker auto encryption
 - Disable Fast Start-Up
+- Disable Storage Sense
 
 #### Telemetry
 - Disable telemetry, diagnostic data, activity history, app-launch tracking & targeted ads
@@ -155,6 +156,7 @@ https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 - Disable the 'Windows Spotlight' desktop background option
 - Disable diagnostic tracking services
 - Disable location services
+- Disable Find My Device location tracking
 
 #### AI
 - Disable & remove Microsoft Copilot
